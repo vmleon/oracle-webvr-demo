@@ -18,7 +18,7 @@
         sound="on: click; src: #click-sound"
         event-set__mouseenter="scale: 1.2 1.2 1"
         event-set__mouseleave="scale: 1 1 1"
-        event-set__click="_target: #image-360; _delay: 300; material.src: ${src}"
+        event-set__click="_target: #image-sky; _delay: 300; material.src: ${src}"
       ></a-entity>
     </script>
   </head>
@@ -31,40 +31,40 @@
         ></audio>
 
         <!-- Images. -->
-        <img id="city" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg" />
-        <img
-          id="city-thumb"
-          src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg"
-        />
-        <img id="cubes" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg" />
-        <img
-          id="cubes-thumb"
-          src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg"
-        />
-        <img
-          id="sechelt"
-          src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg"
-        />
-        <img
-          id="sechelt-thumb"
-          src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg"
-        />
+        <img id="shores" src="assets/shores.jpg" />
+        <img id="shores-thumbnail" src="assets/shores-thumbnail.jpg" />
+        <img id="redwood" src="assets/redwood.png" />
+        <img id="redwood-thumbnail" src="assets/redwood-thumbnail.png" />
+        <img id="twitter" src="assets/twitter.jpg" />
+        <img id="twitter-thumbnail" src="assets/twitter-thumbnail.jpg" />
       </a-assets>
 
       <!-- 360-degree image. -->
       <a-sky
-        id="image-360"
+        id="image-sky"
         radius="10"
-        src="#city"
+        src="#shores"
         animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
         animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade"
       ></a-sky>
 
       <!-- Link template we will build. -->
       <a-entity id="links" layout="type: line; margin: 1.5" position="-1 1 -4">
-        <a-entity template="src: #plane" data-src="#city" data-thumb="#city-thumb"></a-entity>
-        <a-entity template="src: #plane" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
-        <a-entity template="src: #plane" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
+        <a-entity
+          template="src: #plane"
+          data-src="#shores"
+          data-thumb="#shores-thumbnail"
+        ></a-entity>
+        <a-entity
+          template="src: #plane"
+          data-src="#redwood"
+          data-thumb="#redwood-thumbnail"
+        ></a-entity>
+        <a-entity
+          template="src: #plane"
+          data-src="#twitter"
+          data-thumb="#twitter-thumbnail"
+        ></a-entity>
       </a-entity>
 
       <!-- Camera + Cursor. -->

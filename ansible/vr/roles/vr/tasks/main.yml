@@ -15,10 +15,15 @@
     name: nginx.service
     state: started
     enabled: yes
-- name: Copy static content
+- name: Copy index.html
   copy:
     src: ../../../../web/index.html
     dest: /usr/share/nginx/html/index.html
+  notify: restart nginx
+- name: Copy static assets
+  copy:
+    src: ../../../../web/assets/
+    dest: /usr/share/nginx/html/assets/
   notify: restart nginx
 - name: Add firewall ports
   ansible.posix.firewalld:
