@@ -1,0 +1,6 @@
+---
+- name: Provision VR Web Servers
+  hosts: vrwebservers
+  become: true
+  roles:
+    - vr
